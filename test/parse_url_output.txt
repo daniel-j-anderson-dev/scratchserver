@@ -349,5 +349,3 @@ Url { protocol: "https", username: None, password: None, host: "prodgame10.allia
 https://prodgame10.alliances.commandandconquer.ro/12/index.aspx
 Url { protocol: "https", username: None, password: None, host: "prodgame10.alliances.commandandconquer.ro", port: None, path: "12/index.aspx" }
 
-name: None, password: None, host: "prodgame10.alliances.commandandconquer.ro", port: None, path: "12/index.aspx" }
-,
