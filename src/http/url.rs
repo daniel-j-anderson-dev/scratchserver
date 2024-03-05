@@ -201,6 +201,7 @@ fn parse_url() {
     let mut file = std::fs::OpenOptions::new()
         .create(true)
         .write(true)
+        .truncate(true)
         .open("./test/parse_url_output.txt")
         .unwrap();
     std::io::Write::write_all(&mut file, output.as_bytes()).unwrap();
