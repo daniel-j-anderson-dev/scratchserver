@@ -1,14 +1,13 @@
-mod http;
-
-use http::{Request, Response};
+use scratchserver::{http::{Request, Response}, split_stream};
 
 use std::{
-    io::{BufRead, BufReader, BufWriter},
-    net::{TcpListener, TcpStream},
+    io::BufRead,
+    net::TcpListener,
 };
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let listener = TcpListener::bind("localhost:8000")?;
+    let ip = std::env::args().nth(1).unwrap_or("localhost:8000".to_string());
+    let listener = TcpListener::bind(&ip)?;
 
     println!("\n------| Listening on http://localhost:8000 |------");
 
@@ -22,6 +21,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         match reader.read_line(&mut raw_request) {
             Ok(_bytes_read) => (),
             Err(error) => {
+                dbg!(raw_request);
                 println!("Failed to read from client; {}", error);
                 continue;
             }
@@ -35,19 +35,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             }
         };
 
-        println!("raw: {:?}\n{:?}\n", raw_request, request);
+        println!("{:?}\nraw: {}", request, raw_request);
     }
 
     return Ok(());
 }
 
-pub fn split_stream(
-    possible_stream: Result<TcpStream, std::io::Error>,
-) -> Option<(BufReader<TcpStream>, BufWriter<TcpStream>)> {
-    return possible_stream.ok().and_then(|stream| {
-        stream
-            .try_clone()
-            .ok()
-            .map(|clone| (BufReader::new(clone), BufWriter::new(stream)))
-    });
-}
