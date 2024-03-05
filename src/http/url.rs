@@ -1,4 +1,4 @@
-use std::{str::FromStr};
+use std::str::FromStr;
 
 #[derive(Debug)]
 pub struct Url {
@@ -184,6 +184,5 @@ fn parse_url() {
     }
 
     let mut file = std::fs::OpenOptions::new().create(true).write(true).open("./test/parse_url_output.txt").unwrap();
-    file.write_all(output.as_bytes()).unwrap();
-
+    std::io::Write::write_all(&mut file, output.as_bytes()).unwrap();
 }
