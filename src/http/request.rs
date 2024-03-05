@@ -1,33 +1,29 @@
-use crate::http::{url::Url, verb::Verb};
+use crate::http::{verb::Verb};
 
-use std::{fmt::Display, str::FromStr};
+use std::str::FromStr;
 
 #[derive(Debug)]
 pub struct Request {
     verb: Verb,
-    url: Url,
+    path: String,
 }
 impl FromStr for Request {
     type Err = Box<dyn std::error::Error>;
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        let verb = match s
-            .split_whitespace()
-            .filter_map(|word| word.parse::<Verb>().ok())
-            .next()
-        {
+        let mut words = s.split_whitespace();
+
+        let verb = match words.next().and_then(|word| word.parse::<Verb>().ok()) {
             Some(verb) => verb,
-            None => Err("No http Verb found in request")?,
+            None => {
+                Err("No http Verb found in request")?
+            },
         };
 
-        let url = match s
-            .split_whitespace()
-            .filter_map(|word| word.parse::<Url>().ok())
-            .next()
-        {
-            Some(url) => url,
+        let path = match words.next() {
+            Some(url) => url.to_string(),
             None => Err("Url could not be parsed")?,
         };
 
-        return Ok(Request { verb, url });
+        return Ok(Request { verb, path });
     }
 }
