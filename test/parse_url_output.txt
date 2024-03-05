@@ -1,110 +1,353 @@
+http://www.youtube.com
 Url { protocol: "http", username: None, password: None, host: "www.youtube.com", port: None, path: "" }
+
+http://www.facebook.com
 Url { protocol: "http", username: None, password: None, host: "www.facebook.com", port: None, path: "" }
+
+http://www.baidu.com
 Url { protocol: "http", username: None, password: None, host: "www.baidu.com", port: None, path: "" }
+
+http://www.yahoo.com
 Url { protocol: "http", username: None, password: None, host: "www.yahoo.com", port: None, path: "" }
+
+http://www.amazon.com
 Url { protocol: "http", username: None, password: None, host: "www.amazon.com", port: None, path: "" }
+
+http://www.wikipedia.org
 Url { protocol: "http", username: None, password: None, host: "www.wikipedia.org", port: None, path: "" }
+
+http://www.qq.com
 Url { protocol: "http", username: None, password: None, host: "www.qq.com", port: None, path: "" }
+
+http://www.google.co.in
 Url { protocol: "http", username: None, password: None, host: "www.google.co.in", port: None, path: "" }
+
+http://www.twitter.com
 Url { protocol: "http", username: None, password: None, host: "www.twitter.com", port: None, path: "" }
+
+http://www.live.com
 Url { protocol: "http", username: None, password: None, host: "www.live.com", port: None, path: "" }
+
+http://www.taobao.com
 Url { protocol: "http", username: None, password: None, host: "www.taobao.com", port: None, path: "" }
+
+http://www.bing.com
 Url { protocol: "http", username: None, password: None, host: "www.bing.com", port: None, path: "" }
+
+http://www.instagram.com
 Url { protocol: "http", username: None, password: None, host: "www.instagram.com", port: None, path: "" }
+
+http://www.weibo.com
 Url { protocol: "http", username: None, password: None, host: "www.weibo.com", port: None, path: "" }
+
+http://www.sina.com.cn
 Url { protocol: "http", username: None, password: None, host: "www.sina.com.cn", port: None, path: "" }
+
+http://www.linkedin.com
 Url { protocol: "http", username: None, password: None, host: "www.linkedin.com", port: None, path: "" }
+
+http://www.yahoo.co.jp
 Url { protocol: "http", username: None, password: None, host: "www.yahoo.co.jp", port: None, path: "" }
+
+http://www.msn.com
 Url { protocol: "http", username: None, password: None, host: "www.msn.com", port: None, path: "" }
+
+http://www.vk.com
 Url { protocol: "http", username: None, password: None, host: "www.vk.com", port: None, path: "" }
+
+http://www.google.de
 Url { protocol: "http", username: None, password: None, host: "www.google.de", port: None, path: "" }
+
+http://www.yandex.ru
 Url { protocol: "http", username: None, password: None, host: "www.yandex.ru", port: None, path: "" }
+
+http://www.hao123.com
 Url { protocol: "http", username: None, password: None, host: "www.hao123.com", port: None, path: "" }
+
+http://www.google.co.uk
 Url { protocol: "http", username: None, password: None, host: "www.google.co.uk", port: None, path: "" }
+
+http://www.reddit.com
 Url { protocol: "http", username: None, password: None, host: "www.reddit.com", port: None, path: "" }
+
+http://www.ebay.com
 Url { protocol: "http", username: None, password: None, host: "www.ebay.com", port: None, path: "" }
+
+http://www.google.fr
 Url { protocol: "http", username: None, password: None, host: "www.google.fr", port: None, path: "" }
+
+http://www.t.co
 Url { protocol: "http", username: None, password: None, host: "www.t.co", port: None, path: "" }
+
+http://www.tmall.com
 Url { protocol: "http", username: None, password: None, host: "www.tmall.com", port: None, path: "" }
+
+http://www.google.com.br
 Url { protocol: "http", username: None, password: None, host: "www.google.com.br", port: None, path: "" }
+
+http://www.360.cn
 Url { protocol: "http", username: None, password: None, host: "www.360.cn", port: None, path: "" }
+
+http://www.sohu.com
 Url { protocol: "http", username: None, password: None, host: "www.sohu.com", port: None, path: "" }
+
+http://www.amazon.co.jp
 Url { protocol: "http", username: None, password: None, host: "www.amazon.co.jp", port: None, path: "" }
+
+http://www.pinterest.com
 Url { protocol: "http", username: None, password: None, host: "www.pinterest.com", port: None, path: "" }
+
+http://www.netflix.com
 Url { protocol: "http", username: None, password: None, host: "www.netflix.com", port: None, path: "" }
+
+http://www.google.it
 Url { protocol: "http", username: None, password: None, host: "www.google.it", port: None, path: "" }
+
+http://www.google.ru
 Url { protocol: "http", username: None, password: None, host: "www.google.ru", port: None, path: "" }
+
+http://www.microsoft.com
 Url { protocol: "http", username: None, password: None, host: "www.microsoft.com", port: None, path: "" }
+
+http://www.google.es
 Url { protocol: "http", username: None, password: None, host: "www.google.es", port: None, path: "" }
+
+http://www.wordpress.com
 Url { protocol: "http", username: None, password: None, host: "www.wordpress.com", port: None, path: "" }
+
+http://www.gmw.cn
 Url { protocol: "http", username: None, password: None, host: "www.gmw.cn", port: None, path: "" }
+
+http://www.tumblr.com
 Url { protocol: "http", username: None, password: None, host: "www.tumblr.com", port: None, path: "" }
+
+http://www.paypal.com
 Url { protocol: "http", username: None, password: None, host: "www.paypal.com", port: None, path: "" }
+
+http://www.blogspot.com
 Url { protocol: "http", username: None, password: None, host: "www.blogspot.com", port: None, path: "" }
+
+http://www.imgur.com
 Url { protocol: "http", username: None, password: None, host: "www.imgur.com", port: None, path: "" }
+
+http://www.stackoverflow.com
 Url { protocol: "http", username: None, password: None, host: "www.stackoverflow.com", port: None, path: "" }
+
+http://www.aliexpress.com
 Url { protocol: "http", username: None, password: None, host: "www.aliexpress.com", port: None, path: "" }
+
+http://www.naver.com
 Url { protocol: "http", username: None, password: None, host: "www.naver.com", port: None, path: "" }
+
+http://www.ok.ru
 Url { protocol: "http", username: None, password: None, host: "www.ok.ru", port: None, path: "" }
+
+http://www.apple.com
 Url { protocol: "http", username: None, password: None, host: "www.apple.com", port: None, path: "" }
+
+http://www.github.com
 Url { protocol: "http", username: None, password: None, host: "www.github.com", port: None, path: "" }
+
+http://www.chinadaily.com.cn
 Url { protocol: "http", username: None, password: None, host: "www.chinadaily.com.cn", port: None, path: "" }
+
+http://www.imdb.com
 Url { protocol: "http", username: None, password: None, host: "www.imdb.com", port: None, path: "" }
+
+http://www.google.co.kr
 Url { protocol: "http", username: None, password: None, host: "www.google.co.kr", port: None, path: "" }
+
+http://www.fc2.com
 Url { protocol: "http", username: None, password: None, host: "www.fc2.com", port: None, path: "" }
+
+http://www.jd.com
 Url { protocol: "http", username: None, password: None, host: "www.jd.com", port: None, path: "" }
+
+http://www.blogger.com
 Url { protocol: "http", username: None, password: None, host: "www.blogger.com", port: None, path: "" }
+
+http://www.163.com
 Url { protocol: "http", username: None, password: None, host: "www.163.com", port: None, path: "" }
+
+http://www.google.ca
 Url { protocol: "http", username: None, password: None, host: "www.google.ca", port: None, path: "" }
+
+http://www.whatsapp.com
 Url { protocol: "http", username: None, password: None, host: "www.whatsapp.com", port: None, path: "" }
+
+http://www.amazon.in
 Url { protocol: "http", username: None, password: None, host: "www.amazon.in", port: None, path: "" }
+
+http://www.office.com
 Url { protocol: "http", username: None, password: None, host: "www.office.com", port: None, path: "" }
+
+http://www.tianya.cn
 Url { protocol: "http", username: None, password: None, host: "www.tianya.cn", port: None, path: "" }
+
+http://www.google.co.id
 Url { protocol: "http", username: None, password: None, host: "www.google.co.id", port: None, path: "" }
+
+http://www.youku.com
 Url { protocol: "http", username: None, password: None, host: "www.youku.com", port: None, path: "" }
+
+http://www.rakuten.co.jp
 Url { protocol: "http", username: None, password: None, host: "www.rakuten.co.jp", port: None, path: "" }
+
+http://www.craigslist.org
 Url { protocol: "http", username: None, password: None, host: "www.craigslist.org", port: None, path: "" }
+
+http://www.amazon.de
 Url { protocol: "http", username: None, password: None, host: "www.amazon.de", port: None, path: "" }
+
+http://www.nicovideo.jp
 Url { protocol: "http", username: None, password: None, host: "www.nicovideo.jp", port: None, path: "" }
+
+http://www.google.pl
 Url { protocol: "http", username: None, password: None, host: "www.google.pl", port: None, path: "" }
+
+http://www.soso.com
 Url { protocol: "http", username: None, password: None, host: "www.soso.com", port: None, path: "" }
+
+http://www.bilibili.com
 Url { protocol: "http", username: None, password: None, host: "www.bilibili.com", port: None, path: "" }
+
+http://www.dropbox.com
 Url { protocol: "http", username: None, password: None, host: "www.dropbox.com", port: None, path: "" }
+
+http://www.xinhuanet.com
 Url { protocol: "http", username: None, password: None, host: "www.xinhuanet.com", port: None, path: "" }
+
+http://www.outbrain.com
 Url { protocol: "http", username: None, password: None, host: "www.outbrain.com", port: None, path: "" }
+
+http://www.pixnet.net
 Url { protocol: "http", username: None, password: None, host: "www.pixnet.net", port: None, path: "" }
+
+http://www.alibaba.com
 Url { protocol: "http", username: None, password: None, host: "www.alibaba.com", port: None, path: "" }
+
+http://www.alipay.com
 Url { protocol: "http", username: None, password: None, host: "www.alipay.com", port: None, path: "" }
+
+http://www.microsoftonline.com
 Url { protocol: "http", username: None, password: None, host: "www.microsoftonline.com", port: None, path: "" }
+
+http://www.booking.com
 Url { protocol: "http", username: None, password: None, host: "www.booking.com", port: None, path: "" }
+
+http://www.googleusercontent.com
 Url { protocol: "http", username: None, password: None, host: "www.googleusercontent.com", port: None, path: "" }
+
+http://www.google.com.au
 Url { protocol: "http", username: None, password: None, host: "www.google.com.au", port: None, path: "" }
+
+http://www.popads.net
 Url { protocol: "http", username: None, password: None, host: "www.popads.net", port: None, path: "" }
+
+http://www.cntv.cn
 Url { protocol: "http", username: None, password: None, host: "www.cntv.cn", port: None, path: "" }
+
+http://www.zhihu.com
 Url { protocol: "http", username: None, password: None, host: "www.zhihu.com", port: None, path: "" }
+
+http://www.amazon.co.uk
 Url { protocol: "http", username: None, password: None, host: "www.amazon.co.uk", port: None, path: "" }
+
+http://www.diply.com
 Url { protocol: "http", username: None, password: None, host: "www.diply.com", port: None, path: "" }
+
+http://www.coccoc.com
 Url { protocol: "http", username: None, password: None, host: "www.coccoc.com", port: None, path: "" }
+
+http://www.cnn.com
 Url { protocol: "http", username: None, password: None, host: "www.cnn.com", port: None, path: "" }
+
+http://www.bbc.co.uk
 Url { protocol: "http", username: None, password: None, host: "www.bbc.co.uk", port: None, path: "" }
+
+http://www.twitch.tv
 Url { protocol: "http", username: None, password: None, host: "www.twitch.tv", port: None, path: "" }
+
+http://www.wikia.com
 Url { protocol: "http", username: None, password: None, host: "www.wikia.com", port: None, path: "" }
+
+http://www.google.co.th
 Url { protocol: "http", username: None, password: None, host: "www.google.co.th", port: None, path: "" }
+
+http://www.go.com
 Url { protocol: "http", username: None, password: None, host: "www.go.com", port: None, path: "" }
+
+http://www.google.com.ph
 Url { protocol: "http", username: None, password: None, host: "www.google.com.ph", port: None, path: "" }
+
+http://www.doubleclick.net
 Url { protocol: "http", username: None, password: None, host: "www.doubleclick.net", port: None, path: "" }
+
+http://www.onet.pl
 Url { protocol: "http", username: None, password: None, host: "www.onet.pl", port: None, path: "" }
+
+http://www.googleadservices.com
 Url { protocol: "http", username: None, password: None, host: "www.googleadservices.com", port: None, path: "" }
+
+http://www.accuweather.com
 Url { protocol: "http", username: None, password: None, host: "www.accuweather.com", port: None, path: "" }
+
+http://www.googleweblight.com
 Url { protocol: "http", username: None, password: None, host: "www.googleweblight.com", port: None, path: "" }
+
+http://www.answers.yahoo.com
 Url { protocol: "http", username: None, password: None, host: "www.answers.yahoo.com", port: None, path: "" }
+
+https://www.example.com
 Url { protocol: "https", username: None, password: None, host: "www.example.com", port: None, path: "" }
+
+ftp://user:pass@ftp.example.com
 Url { protocol: "ftp", username: Some("user"), password: Some("pass"), host: "ftp.example.com", port: None, path: "" }
+
+http://localhost:8080/path/to/resource
 Url { protocol: "http", username: None, password: None, host: "localhost", port: Some(8080), path: "path/to/resource" }
+
+https://sub.domain.example.org:8443
 Url { protocol: "https", username: None, password: None, host: "sub.domain.example.org", port: Some(8443), path: "" }
+
+file:///path/to/file.txt
 Url { protocol: "file", username: None, password: None, host: "", port: None, path: "path/to/file.txt" }
+
+git+ssh://git@github.com/user/repo.git
 Url { protocol: "git+ssh", username: Some("git"), password: None, host: "github.com", port: None, path: "user/repo.git" }
+
+https://user:password@www.example.com:8080/path/to/resource
 Url { protocol: "https", username: Some("user"), password: Some("password"), host: "www.example.com", port: Some(8080), path: "path/to/resource" }
+
+sftp://user@ssh.example.com:2222/home/user
 Url { protocol: "sftp", username: Some("user"), password: None, host: "ssh.example.com", port: Some(2222), path: "home/user" }
+
+ws://websocket.example.com
 Url { protocol: "ws", username: None, password: None, host: "websocket.example.com", port: None, path: "" }
+
+wss://secure.websocket.example.org
 Url { protocol: "wss", username: None, password: None, host: "secure.websocket.example.org", port: None, path: "" }
+
+http://google.com
+Url { protocol: "http", username: None, password: None, host: "google.com", port: None, path: "" }
+
+http://localhost:8080/test/project/
+Url { protocol: "http", username: None, password: None, host: "localhost", port: Some(8080), path: "test/project/" }
+
+http://mail.yahoo.com
+Url { protocol: "http", username: None, password: None, host: "mail.yahoo.com", port: None, path: "" }
+
+http://www.bing.com
+Url { protocol: "http", username: None, password: None, host: "www.bing.com", port: None, path: "" }
+
+http://www.phpromania.net/forum/viewtopic.php?f=24&t=7549
+Url { protocol: "http", username: None, password: None, host: "www.phpromania.net", port: None, path: "forum/viewtopic.php?f=24&t=7549" }
+
+https://prodgame10.alliances.commandandconquer.com/12/index.aspx
+Url { protocol: "https", username: None, password: None, host: "prodgame10.alliances.commandandconquer.com", port: None, path: "12/index.aspx" }
+
+https://prodgame10.alliances.commandandconquer.ro/12/index.aspx
+Url { protocol: "https", username: None, password: None, host: "prodgame10.alliances.commandandconquer.ro", port: None, path: "12/index.aspx" }
+
+name: None, password: None, host: "prodgame10.alliances.commandandconquer.ro", port: None, path: "12/index.aspx" }
+,

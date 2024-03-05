@@ -23,23 +23,40 @@ impl FromStr for Url {
         let mut url_parts = rest.split('@');
         let (user_info, host_path) = match url_parts.clone().count() {
             1 => (None, url_parts.next().expect("url_parts has length of 1")),
-            2 => (url_parts.next(), url_parts.next().expect("url_parts has length of 2")),
+            2 => (
+                url_parts.next(),
+                url_parts.next().expect("url_parts has length of 2"),
+            ),
             _ => Err("Invalid URL format")?,
         };
 
         let mut user_info_parts = user_info.unwrap_or_default().split(':');
-        let username = user_info_parts.next().and_then(|s| if s.is_empty() {None} else {Some(s.to_string())});
-        let password = user_info_parts.next().and_then(|s| if s.is_empty() {None} else {Some(s.to_string())});
+        let username = user_info_parts.next().and_then(|s| {
+            if s.is_empty() {
+                None
+            } else {
+                Some(s.to_string())
+            }
+        });
+        let password = user_info_parts.next().and_then(|s| {
+            if s.is_empty() {
+                None
+            } else {
+                Some(s.to_string())
+            }
+        });
 
         // Split the host_port_path into host_port and path
         let mut host_path_parts = host_path.splitn(2, '/');
         let host_port = host_path_parts.next().ok_or("Missing host:port")?;
         let path = host_path_parts.next().unwrap_or(&"").to_string();
 
-         // Parse host and port
+        // Parse host and port
         let mut host_port_parts = host_port.split(':');
         let host = host_port_parts.next().ok_or("Missing host")?.to_string();
-        let port = host_port_parts.next().and_then(|port_str| port_str.parse::<u16>().ok());
+        let port = host_port_parts
+            .next()
+            .and_then(|port_str| port_str.parse::<u16>().ok());
 
         // Build the Url struct and return the result
         return Ok(Url {
@@ -158,9 +175,6 @@ fn parse_url() {
         "http://www.accuweather.com",
         "http://www.googleweblight.com",
         "http://www.answers.yahoo.com",
-    ];
-    
-    const EXAMPLES: &[&str] = &[
         "https://www.example.com",
         "ftp://user:pass@ftp.example.com",
         "http://localhost:8080/path/to/resource",
@@ -171,18 +185,23 @@ fn parse_url() {
         "sftp://user@ssh.example.com:2222/home/user",
         "ws://websocket.example.com",
         "wss://secure.websocket.example.org",
+        "http://google.com",
+        "http://localhost:8080/test/project/",
+        "http://mail.yahoo.com",
+        "http://www.bing.com",
+        "http://www.phpromania.net/forum/viewtopic.php?f=24&t=7549",
+        "https://prodgame10.alliances.commandandconquer.com/12/index.aspx",
+        "https://prodgame10.alliances.commandandconquer.ro/12/index.aspx",
     ];
 
-    for &url in URLS {
-        output.push_str(format!("{:?}" ,Url::from_str(url).unwrap()).as_str());
-        output.push('\n');
-    }
+    URLS.into_iter().for_each(|url| {
+        output.push_str(format!("{}\n{:?}\n\n", url, url.parse::<Url>().unwrap()).as_str())
+    });
 
-    for &url in EXAMPLES {
-        output.push_str(format!("{:?}" ,Url::from_str(url).unwrap()).as_str());
-        output.push('\n');
-    }
-
-    let mut file = std::fs::OpenOptions::new().create(true).write(true).open("./test/parse_url_output.txt").unwrap();
+    let mut file = std::fs::OpenOptions::new()
+        .create(true)
+        .write(true)
+        .open("./test/parse_url_output.txt")
+        .unwrap();
     std::io::Write::write_all(&mut file, output.as_bytes()).unwrap();
 }
