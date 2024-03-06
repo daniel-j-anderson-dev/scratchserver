@@ -1,7 +1,9 @@
+use color_eyre::{eyre::eyre, Report};
 use std::{fmt::Display, str::FromStr};
 
-#[derive(Debug)]
-pub enum Verb {
+#[derive(Debug, Default, Clone, Copy)]
+pub enum Method {
+    #[default]
     Get,
     Head,
     Post,
@@ -12,25 +14,25 @@ pub enum Verb {
     Trace,
     Patch,
 }
-impl FromStr for Verb {
-    type Err = Box<dyn std::error::Error>;
+impl FromStr for Method {
+    type Err = Report;
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        let verb = match s {
-            "GET" => Self::Get,
-            "HEAD" => Self::Head,
-            "POST" => Self::Post,
-            "PUT" => Self::Put,
-            "DELETE" => Self::Delete,
-            "CONNECT" => Self::Connect,
-            "OPTIONS" => Self::Options,
-            "TRACE" => Self::Trace,
-            "PATCH" => Self::Patch,
-            invalid_verb => Err(format!("{} is not a valid HTTP Verb", invalid_verb))?,
+        let verb = match s.to_lowercase().as_str() {
+            "get" => Self::Get,
+            "head" => Self::Head,
+            "post" => Self::Post,
+            "put" => Self::Put,
+            "delete" => Self::Delete,
+            "connect" => Self::Connect,
+            "options" => Self::Options,
+            "trace" => Self::Trace,
+            "patch" => Self::Patch,
+            invalid_verb => Err(eyre!("{} is not a valid HTTP Verb", invalid_verb))?,
         };
         return Ok(verb);
     }
 }
-impl Display for Verb {
+impl Display for Method {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         return write!(
             f,
