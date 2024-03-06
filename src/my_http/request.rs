@@ -1,4 +1,4 @@
-use crate::my_http::{method::Method, url::path::Path, Version};
+use crate::my_http::{method::Method, Version};
 
 use color_eyre::{eyre::eyre, Report};
 use std::{
