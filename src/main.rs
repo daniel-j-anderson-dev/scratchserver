@@ -15,8 +15,6 @@ fn main() -> Result<(), Report> {
         if let Err(error) = handle_connection(connection) {
             println!("Error handling connection: {}", error.on_red());
         }
-
-        println!();
     }
 
     return Ok(());
