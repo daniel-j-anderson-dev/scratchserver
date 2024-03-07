@@ -24,13 +24,9 @@ pub fn handle_connection(
     println!("{:#?}\n", request.bright_blue());
 
     let response = Response::try_from(request)?;
-    if response.body_length() <= 1000 {
-        println!("response:\n{}", response.on_blue());
-    } else {
-        println!("response:\n{}\n{}\n{}", response.start_line().on_blue(), response.headers().on_blue(), "body omitted for brevity".on_blue());
-    }
+    println!("Response:\n{}", response);
 
-    writer.write_all(response.to_string().as_bytes())?;
+    response.send(&mut writer)?;
 
     return Ok(());
 }

@@ -1,21 +1,25 @@
 mod status;
 
 use crate::{
-    my_http::{request::Request, response::status::StatusCode, Version},
+    my_http::{body::Body, request::Request, response::status::StatusCode, Version},
     SERVE_DIR,
 };
 
 use color_eyre::{owo_colors::OwoColorize, Report};
-use flate2::{read::GzEncoder, Compression};
 use std::{
-    collections::HashMap, fmt::Display, fs::File, io::{BufReader, Read, Write}, path::{Path, PathBuf}
+    borrow::Cow,
+    collections::HashMap,
+    fmt::Display,
+    fs::File,
+    io::{Read, Write},
+    path::{Path, PathBuf},
 };
 
 #[derive(Debug)]
 pub struct Response {
     version: Version,
     headers: HashMap<String, String>,
-    body: Vec<u8>,
+    body: Body,
     status: StatusCode,
 }
 impl Response {
@@ -30,28 +34,27 @@ impl Response {
         return headers;
     }
     /// returns the number of bytes in `body`
-    pub fn body_length(&self) -> usize {
-        return self.body.len();
+    pub fn body(&self) -> &Body {
+        return &self.body;
     }
-    ///  Encodes the body using gz spec
-    fn gz_encoded_body(&self) -> Result<Vec<u8>, Report> {
-        let mut encoded_body = Vec::with_capacity(self.body_length());
+    /// Writes `self` in proper http format to `writer`
+    pub fn send(&self, writer: &mut dyn Write) -> Result<(), std::io::Error> {
+        writer.write(self.start_line().as_bytes())?;
+        writer.write(b"\r\n")?;
+        writer.write(self.headers().as_bytes())?;
+        writer.write(b"\r\n")?;
+        writer.write(b"\r\n")?;
+        writer.write(self.body.as_ref())?;
+        writer.write(b"\r\n")?;
 
-        let mut encoder = GzEncoder::new(
-            self.body.as_slice(),
-            Compression::default(),
-        );
-
-        encoder.read_to_end(&mut encoded_body)?;
-
-        return Ok(encoded_body);
+        return Ok(());
     }
+
     fn get_content_type(file_path: &Path) -> Option<&'static str> {
         return file_path
             .extension()
             .and_then(|extension| extension.to_str())
-            .and_then(|extension| match extension
-            {
+            .and_then(|extension| match extension {
                 "html" => Some("text/html"),
                 "ico" => Some("x-icon"),
                 "jpg" | "jpeg" => Some("image/jpg"),
@@ -63,17 +66,18 @@ impl Response {
 }
 impl Display for Response {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{}\r\n", self.start_line())?;
-
-        write!(f, "{}\r\n", self.headers())?;
-
-        match String::from_utf8(self.body.clone()) {
-            Ok(body_string) => write!(f, "\r\n{}\r\n\r\n", body_string)?,
-            Err(_) => match self.gz_encoded_body() {
-                Ok(encoded_body) => write!(f, "\r\n{:?}\r\n\r\n", encoded_body)?,
-                Err(_) => return Err(std::fmt::Error),
+        write!(f, "{}\r\n", self.start_line().on_blue())?;
+        write!(f, "{}\r\n", self.headers().on_blue())?;
+        write!(
+            f,
+            "\r\n{}\r\n",
+            if self.body().len() > 1000 {
+                "body removed for brevity".into()
+            } else {
+                String::from_utf8_lossy(self.body.as_ref())
             }
-        }
+            .on_blue()
+        )?;
 
         return Ok(());
     }
@@ -94,14 +98,14 @@ impl TryFrom<Request> for Response {
             File::open(&file_path).and_then(|mut file| file.read_to_end(&mut file_data));
 
         let (body, status) = match bytes_read {
-            Ok(_) => (file_data, StatusCode::OK),
+            Ok(_) => (Body::from(file_data), StatusCode::OK),
             Err(io_error) => {
                 println!(
                     "in Response::TryFrom<Request> could not read {} because {}\nsetting body to empty",
                     file_path.display(),
                     io_error
                 );
-                (Vec::new(), StatusCode::NOT_FOUND)
+                (Body::from(Vec::new()), StatusCode::NOT_FOUND)
             }
         };
 
@@ -118,9 +122,9 @@ impl TryFrom<Request> for Response {
                 headers
                     .entry("Content-Encoding".to_string())
                     .or_insert("gzip".to_string());
-                headers
-                    .entry("Accept-Ranges".to_string())
-                    .or_insert("bytes".to_string());
+                // headers
+                // .entry("Accept-Ranges".to_string())
+                // .or_insert("bytes".to_string());
             }
         }
 
@@ -140,6 +144,7 @@ mod test {
 
     use super::*;
     use std::{
+        io::Write,
         net::{TcpListener, TcpStream},
         thread,
     };
